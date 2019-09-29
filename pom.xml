@@ -38,12 +38,21 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.10</version>
+            <scope>provided</scope>
+        </dependency>
+
+
         <!-- H2 DB -->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <version>1.4.199</version>
-            <scope>test</scope>
+            <scope>runtime</scope>
         </dependency>
 
         <!-- Swagger -->

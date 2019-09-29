@@ -3,9 +3,11 @@ package kg.parking.dto;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import kg.parking.entity.ParkingPlace;
-import lombok.Getter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Getter
+@Data
+@NoArgsConstructor
 @ApiModel(description = "Parking place details")
 public class ParkingPlaceDto {
     @ApiModelProperty(notes = "The database generated parking place ID")

@@ -24,6 +24,6 @@ public class ParkingPlace {
     private Boolean isBooked;
 
     @Column(name = "parking_fee")
-    private Double parkingFee;
+    private Long parkingFee;
 
 }

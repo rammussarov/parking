@@ -39,12 +39,16 @@ public class ParkingTicketServiceImpl implements ParkingTicketService {
         ParkingTicket parkingTicket = parkingTicketOptional.get();
         parkingTicket.setEndDate(LocalDateTime.now());
         parkingTicket.setPrice(countTicketPrice(parkingTicket));
+        if (parkingTicket.getParkingPlace().getIsBooked()) {
+            parkingTicket.getParkingPlace().setIsBooked(false);
+        }
 
         return repository.save(parkingTicket);
     }
 
-    private Double countTicketPrice(ParkingTicket parkingTicket) {
+    private Long countTicketPrice(ParkingTicket parkingTicket) {
         long minsOfParking = Duration.between(parkingTicket.getStartDate(), parkingTicket.getEndDate()).toMinutes();
-        return (minsOfParking / 60) * parkingTicket.getParkingPlace().getParkingFee();
+        double price = ((double) minsOfParking / 60) * parkingTicket.getParkingPlace().getParkingFee();
+        return (long) Math.ceil( price);
     }
 }

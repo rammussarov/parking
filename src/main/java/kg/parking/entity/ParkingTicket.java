@@ -26,7 +26,7 @@ public class ParkingTicket {
     private LocalDateTime endDate;
 
     @Column(name = "price")
-    private Double price;
+    private Long price;
 
     public ParkingTicket() {
     }

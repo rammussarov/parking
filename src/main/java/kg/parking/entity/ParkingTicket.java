@@ -12,7 +12,7 @@ public class ParkingTicket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "parking_ticket_seq")
-    @SequenceGenerator(name = "parking_ticket_seq", sequenceName = "parking_ticket_seq", allocationSize = 100)
+    @SequenceGenerator(name = "parking_ticket_seq", sequenceName = "parking_ticket_seq", allocationSize = 1)
     private Long id;
 
     @ManyToOne
